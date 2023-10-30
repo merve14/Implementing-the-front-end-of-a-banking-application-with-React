@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import "./styles/index.scss";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home.js";
+import LogIn from "./pages/LogIn.js";
+import Profile from "./pages/Profile.js";
+import { useDispatch } from "react-redux";
+import { getToken } from "./store/userSlice";
 
 function App() {
+  const dispatch = useDispatch();
+
+  if (localStorage.token) {
+    dispatch(getToken({ token: localStorage.token }));
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/LogIn" element={<LogIn />} />
+        <Route path="/Profile" element={<Profile />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

@@ -1,0 +1,25 @@
+.all-three-featur-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+
+  .feature-item {
+    padding: 2.5rem;
+    flex: 1;
+
+    img {
+      width: 100px;
+      border: 10px solid #00bc77;
+      border-radius: 50%;
+      padding: 1rem;
+      overflow: clip;
+    }
+    .feature-item-title {
+      color: #222;
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+  }
+}

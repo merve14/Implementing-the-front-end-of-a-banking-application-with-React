@@ -1,0 +1,55 @@
+.navigationBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 25px;
+
+  .navbar-logo {
+    max-width: 100%;
+    width: 200px;
+  }
+
+  .two-icons {
+    display: flex;
+    align-items: center;
+
+    .sign-in-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      svg.svg-inline--fa.fa-circle-user {
+        padding-right: 5px;
+      }
+      .sign-in-link {
+        font-weight: bold;
+        color: #2c3e50;
+        text-decoration: none;
+        padding-right: 15px;
+      }
+    }
+  }
+  .sign-out-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    svg.svg-inline--fa.fa-right-from-bracket {
+      padding-right: 5px;
+    }
+
+    p {
+      font-weight: bold;
+      padding-right: 5px;
+    }
+  }
+}

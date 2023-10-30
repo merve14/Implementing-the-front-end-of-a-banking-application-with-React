@@ -1,0 +1,60 @@
+.profile-header {
+  text-align: center;
+  h1 {
+    color: white;
+    margin-bottom: 2rem;
+    margin-top: 0;
+    padding-top: 2rem;
+  }
+  .name-edit-button {
+    border-color: #00bc77;
+    background-color: #00bc77;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .input-wrapper {
+    label {
+      color: white;
+    }
+    input {
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+      margin: 7px;
+    }
+    .read-only-input {
+      background-color: #bfbfbf;
+      color: #545454;
+      cursor: default;
+    }
+  }
+  .save-changes-buttons {
+    .save-button {
+      border-color: #00bc77;
+      background-color: #00bc77;
+      color: #fff;
+      font-weight: bold;
+      padding: 16px 35px;
+      margin-bottom: 2rem;
+      margin-top: 2rem;
+      margin-right: 20px;
+      border-radius: 10px;
+    }
+
+    .cancel-button {
+      border-color: #00bc77;
+      background-color: #00bc77;
+      color: #fff;
+      font-weight: bold;
+      padding: 16px 35px;
+      margin-bottom: 2rem;
+      margin-top: 2rem;
+      border-radius: 10px;
+    }
+  }
+}

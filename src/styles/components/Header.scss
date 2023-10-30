@@ -1,0 +1,29 @@
+.header {
+  background-image: url(../../designs/img/bank-tree.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0% 33%;
+  height: 400px;
+  position: relative;
+
+  .advantage-content {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    width: 300px;
+    margin: 2rem;
+    padding: 2rem;
+    background: white;
+    text-align: left;
+
+    .in-strong-capitals p {
+      font-weight: bold;
+      font-size: 1.5rem;
+      margin: 0;
+    }
+    .in-normal-capitals {
+      font-size: 1.2rem;
+      margin-bottom: 0;
+    }
+  }
+}
