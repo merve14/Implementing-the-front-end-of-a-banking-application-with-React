@@ -4,9 +4,17 @@
   align-items: center;
   text-align: center;
 
+  @media only screen and (max-width: 480px) {
+    display: block;
+  }
+
   .feature-item {
     padding: 2.5rem;
     flex: 1;
+
+    @media only screen and (max-width: 480px) {
+      padding: 20px;
+    }
 
     img {
       width: 100px;

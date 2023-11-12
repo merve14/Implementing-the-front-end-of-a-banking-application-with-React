@@ -2,9 +2,9 @@ import React from "react";
 import NavBar from "../components/NavBar";
 import Header from "../components/Header";
 import AdvantageContent from "../components/AdvantageContent";
-import iconChat from "../designs/img/icon-chat.png";
-import moneyIcon from "../designs/img/icon-money.png";
-import securityIcon from "../designs/img/icon-security.png";
+import iconChat from "../designs/img/icon-chat.webp";
+import moneyIcon from "../designs/img/icon-money.webp";
+import securityIcon from "../designs/img/icon-security.webp";
 import Footer from "../components/Footer";
 
 const Home = () => {

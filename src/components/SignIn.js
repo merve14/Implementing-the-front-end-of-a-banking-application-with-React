@@ -9,7 +9,6 @@ const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [checkBox, setCheckBox] = useState(false);
-  const [user, setUser] = useState(null);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 

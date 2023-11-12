@@ -4,23 +4,20 @@ import {
   faUserCircle,
   faRightFromBracket,
 } from "@fortawesome/free-solid-svg-icons";
-import logo from "../designs/img/argentBankLogo.png";
-import { NavLink, useNavigate } from "react-router-dom";
+import logo from "../designs/img/argentBankLogo.webp";
+import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useState } from "react";
 
-const NavBar = ({
-  isAuthenticated,
-  showSignOutIcon,
-  ShowSignOutText,
-  onSignOut,
-}) => {
-  const navigate = useNavigate();
+const NavBar = () => {
+  const [isAuthenticated, setIsAuthenticated] = useState(
+    !!localStorage.getItem("token")
+  );
 
+  const profile = useSelector((state) => state.profile);
   const handleSignOut = () => {
     localStorage.removeItem("token");
-    if (onSignOut) {
-      onSignOut();
-    }
-    navigate("/");
+    window.location.reload();
   };
 
   return (
@@ -31,8 +28,10 @@ const NavBar = ({
       <div className="two-icons">
         {isAuthenticated ? (
           <div className="sign-out-icon" onClick={handleSignOut}>
-            {ShowSignOutText && <p>{ShowSignOutText}</p>}
-            {showSignOutIcon && <FontAwesomeIcon icon={faRightFromBracket} />}
+            <p>
+              <FontAwesomeIcon icon={faUserCircle} /> {profile.userName}{" "}
+              <FontAwesomeIcon icon={faRightFromBracket} /> sign out
+            </p>
           </div>
         ) : (
           <div className="sign-in-icon">

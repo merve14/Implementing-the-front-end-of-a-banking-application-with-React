@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import TransactionPart from "../components/TransactionPart";
@@ -6,14 +6,6 @@ import EditUserInfo from "../components/EditUserInfo";
 import { useNavigate } from "react-router-dom";
 
 const Profile = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(
-    !!localStorage.getItem("token")
-  );
-
-  const handleSignOut = () => {
-    // Handle any additional sign-out logic (e.g., redirect to sign-in page)
-    setIsAuthenticated(false);
-  };
   const navigate = useNavigate();
   useEffect(() => {
     if (!localStorage.token) {
@@ -23,12 +15,7 @@ const Profile = () => {
   }, []);
   return (
     <div>
-      <NavBar
-        isAuthenticated={isAuthenticated}
-        showSignOutIcon={isAuthenticated}
-        ShowSignOutText="Sign out"
-        onSignOut={() => setIsAuthenticated(false)}
-      />
+      <NavBar />
       <div className="profile">
         <EditUserInfo />
         <TransactionPart

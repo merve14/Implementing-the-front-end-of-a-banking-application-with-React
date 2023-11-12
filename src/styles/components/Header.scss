@@ -1,11 +1,15 @@
 .header {
-  background-image: url(../../designs/img/bank-tree.jpeg);
+  background-image: url(../../designs/img/bank-tree.webp);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0% 33%;
   height: 400px;
   position: relative;
 
+  @media only screen and (max-width: 480px) {
+    height: 280px;
+    background-size: contain;
+  }
   .advantage-content {
     position: absolute;
     top: 50px;
@@ -16,14 +20,30 @@
     background: white;
     text-align: left;
 
+    @media only screen and (max-width: 480px) {
+      top: 66px;
+      right: -9px;
+      width: 152px;
+      margin: 0;
+      padding: 20px;
+    }
+
     .in-strong-capitals p {
       font-weight: bold;
       font-size: 1.5rem;
       margin: 0;
+
+      @media only screen and (max-width: 480px) {
+        font-size: 14px;
+      }
     }
     .in-normal-capitals {
       font-size: 1.2rem;
       margin-bottom: 0;
+
+      @media only screen and (max-width: 480px) {
+        font-size: 10px;
+      }
     }
   }
 }

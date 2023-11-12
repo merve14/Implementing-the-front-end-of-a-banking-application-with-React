@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setGetProfile } from "../store/profileSlice";
+import { setGetProfile, changeUserName } from "../store/profileSlice";
 
 const EditUserInfo = () => {
   const token = useSelector((state) => state.user.token);
+  // we can use useSelector to get the profile data from the store
   const profile = useSelector((state) => state.profile);
   const dispatch = useDispatch();
 
@@ -22,6 +23,8 @@ const EditUserInfo = () => {
         const data = await response.json();
         console.log(data);
         dispatch(setGetProfile({ data }));
+        console.log(profile);
+        setEditedUserName(profile.userName);
       } catch (err) {
         console.log(err);
       }
@@ -36,10 +39,23 @@ const EditUserInfo = () => {
     setIsEditing(true);
   };
 
-  const handleSaveChanges = () => {
+  const handleSaveChanges = async () => {
     // Here you can handle saving the changes, e.g., send a request to update the user name
     // For demonstration purposes, just update the state
-
+    try {
+      await fetch("http://localhost:3001/api/v1/user/profile", {
+        method: "PUT",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ userName: editedUserName }),
+      });
+      // we dispatch the action to update the store
+      dispatch(changeUserName({ userName: editedUserName }));
+    } catch (err) {
+      console.log(err);
+    }
     setIsEditing(false);
   };
 
@@ -49,7 +65,7 @@ const EditUserInfo = () => {
 
   return (
     <div className="profile-header">
-      <h1>Welcome back{profile.firstName + " " + profile.lastName + "!"}</h1>
+      <h1>Welcome back {profile.firstName + " " + profile.lastName + "!"}</h1>
       {isEditing ? (
         <form>
           <div className="input-wrapper">
