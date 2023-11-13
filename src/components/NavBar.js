@@ -7,12 +7,9 @@ import {
 import logo from "../designs/img/argentBankLogo.webp";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { useState } from "react";
 
 const NavBar = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(
-    !!localStorage.getItem("token")
-  );
+  const isAuthenticated = !!localStorage.getItem("token");
 
   const profile = useSelector((state) => state.profile);
   const handleSignOut = () => {
