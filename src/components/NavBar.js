@@ -24,9 +24,12 @@ const NavBar = () => {
       </NavLink>
       <div className="two-icons">
         {isAuthenticated ? (
-          <div className="sign-out-icon" onClick={handleSignOut}>
-            <p>
-              <FontAwesomeIcon icon={faUserCircle} /> {profile.userName}{" "}
+          <div className="sign-out-icon">
+            <NavLink to="/Profile" className="return-to-profile">
+              <FontAwesomeIcon icon={faUserCircle} />
+              {profile.userName}{" "}
+            </NavLink>{" "}
+            <p onClick={handleSignOut}>
               <FontAwesomeIcon icon={faRightFromBracket} /> sign out
             </p>
           </div>

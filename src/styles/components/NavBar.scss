@@ -42,24 +42,33 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    font-weight: bold;
+
+    svg.svg-inline--fa.fa-right-from-bracket {
+      margin-right: 0;
+    }
+  }
+  a.return-to-profile {
+    padding-right: 5px;
+    text-decoration: none;
+    color: black;
 
     &:hover {
       text-decoration: underline;
     }
 
-    svg.svg-inline--fa.fa-right-from-bracket {
-      margin-right: 0;
-    }
-
     svg.svg-inline--fa.fa-circle-user {
+      margin-right: 5px;
       @media only screen and (max-width: 480px) {
         margin-right: 6px;
       }
     }
-
     p {
-      font-weight: bold;
       padding-right: 5px;
+
+      &:hover {
+        text-decoration: underline;
+      }
       @media only screen and (max-width: 480px) {
         width: 87px;
         padding: 0;
